@@ -1,0 +1,448 @@
+:root {
+    --B-celeste: #B9DDF5;
+    --B-rosado: #F5C6D6;
+    --B-amarillo: #F9E6A5;
+    --B-aguacate: #C5D6A0;
+    --B-crema: #FFF9F2;
+    --B-texto: #493A38;
+    --B-rosa-oscuro: #BD8298;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--B-crema);
+    color: var(--B-texto);
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+.B-contenedor {
+    width: min(100% - 36px, 1000px);
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.B-inicio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 70px 0;
+}
+
+.B-terminal {
+    background: #302D39;
+    color: #F7EDE5;
+    width: min(100%, 550px);
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 15px 40px #493a3820;
+    margin-bottom: 45px;
+    font-family: "DM Mono", monospace;
+}
+
+.B-terminal-barra {
+    background: #45414F;
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.B-terminal-barra span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #F5A6A6;
+}
+
+.B-terminal-barra span:nth-child(2) {
+    background: #F5D88E;
+}
+
+.B-terminal-barra span:nth-child(3) {
+    background: #A9D6A0;
+}
+
+.B-terminal-barra p {
+    margin-left: 12px;
+    font-size: 11px;
+    color: #D9D2DF;
+}
+
+.B-terminal-contenido {
+    padding: 23px;
+    line-height: 2;
+    font-size: 12px;
+}
+
+.B-terminal-verde {
+    color: #A9D6A0;
+}
+
+.B-terminal-rosa {
+    color: #F5B8D0;
+}
+
+.B-terminal-cursor::after {
+    content: "▋";
+    animation: B-parpadeo 1s infinite;
+}
+
+@keyframes B-parpadeo {
+    50% {
+        opacity: 0;
+    }
+}
+
+.B-inicio-texto {
+    max-width: 650px;
+}
+
+.B-etiqueta {
+    display: inline-block;
+    color: var(--B-rosa-oscuro);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.B-inicio h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 7vw, 62px);
+    line-height: 1.15;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.B-inicio-texto p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #80716E;
+    margin-bottom: 28px;
+}
+
+.B-boton {
+    background: var(--B-rosado);
+    color: #493A38;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 7px 20px #F5C6D640;
+}
+
+.B-boton:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px #F5C6D660;
+}
+
+.B-boton span {
+    margin-left: 8px;
+}
+
+.B-decoracion {
+    position: absolute;
+    font-size: 42px;
+    opacity: 0.8;
+}
+
+.B-flor-uno {
+    left: 5%;
+    bottom: 12%;
+    transform: rotate(-20deg);
+}
+
+.B-flor-dos {
+    right: 5%;
+    top: 14%;
+    transform: rotate(15deg);
+}
+
+.B-historia {
+    padding: 75px 0 30px;
+    animation: B-aparecer 1s ease;
+}
+
+.B-oculto {
+    display: none !important;
+}
+
+@keyframes B-aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.B-encabezado {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.B-encabezado h2,
+.B-final h2 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: clamp(30px, 5vw, 43px);
+    margin-bottom: 15px;
+}
+
+.B-encabezado p,
+.B-final>p {
+    color: #80716E;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.B-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.B-tarjeta {
+    padding: 30px;
+    border-radius: 20px;
+    min-height: 210px;
+    transition: transform 0.3s ease;
+}
+
+.B-tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.B-tarjeta-rosada {
+    background: #F9E2E9;
+}
+
+.B-tarjeta-celeste {
+    background: #E2F0FA;
+}
+
+.B-tarjeta-amarilla {
+    background: #FAF0CF;
+}
+
+.B-tarjeta-verde {
+    background: #E7EDD9;
+}
+
+.B-icono {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.B-tarjeta h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+
+.B-tarjeta p {
+    color: #756764;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.B-musica {
+    margin-top: 25px;
+    padding: 22px;
+    background: #F0E9F0;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.B-musica>span {
+    font-size: 32px;
+    color: #A77B9B;
+}
+
+.B-musica h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.B-musica p {
+    font-size: 12px;
+    color: #80716E;
+    margin-top: 5px;
+}
+
+.B-italia {
+    background: #E9F0E3;
+    border-radius: 20px;
+    padding: 35px;
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.B-italia h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.B-italia p {
+    font-size: 13px;
+    color: #756764;
+    line-height: 1.7;
+}
+
+.B-italia-icono {
+    font-size: 55px;
+}
+
+.B-final {
+    padding: 100px 0 60px;
+    text-align: center;
+    max-width: 650px;
+    margin: auto;
+}
+
+.B-final>p {
+    margin-bottom: 25px;
+}
+
+.B-carta {
+    background: #FFFFFF;
+    border: 1px solid #F1E3DE;
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 35px;
+    box-shadow: 0 15px 40px #493A380D;
+    text-align: left;
+    animation: B-aparecer 1s ease;
+}
+
+.B-carta-flor {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.B-carta h2 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.B-carta p {
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    line-height: 2;
+    color: #756764;
+    margin-bottom: 18px;
+}
+
+.B-carta .B-firma {
+    text-align: right;
+    color: var(--B-rosa-oscuro);
+    font-style: italic;
+    margin-top: 30px;
+}
+
+.B-footer {
+    padding: 25px 0;
+    text-align: center;
+    font-size: 10px;
+    color: #A99A96;
+    border-top: 1px solid #EFE5DD;
+}
+
+/* Lluvia */
+
+.B-gota {
+    position: fixed;
+    top: -20px;
+    width: 2px;
+    height: 15px;
+    background: #A9CFE8;
+    opacity: 0.35;
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 0;
+    animation: B-caer linear forwards;
+}
+
+@keyframes B-caer {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .B-terminal-contenido {
+        font-size: 10px;
+        padding: 17px;
+    }
+
+    .B-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .B-tarjeta {
+        min-height: auto;
+    }
+
+    .B-italia {
+        padding: 25px;
+    }
+
+    .B-italia-icono {
+        font-size: 38px;
+    }
+
+    .B-carta {
+        padding: 25px;
+    }
+
+    .B-carta p {
+        font-size: 15px;
+    }
+
+    .B-flor-uno {
+        left: 0;
+        bottom: 5%;
+    }
+
+    .B-flor-dos {
+        right: 0;
+        top: 5%;
+    }
+}
